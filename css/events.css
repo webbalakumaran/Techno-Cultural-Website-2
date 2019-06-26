@@ -1,0 +1,234 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:300,400,500|Nunito+Sans:200|Open+Sans:300,400|Raleway:300,400,500|Bad+Script);
+*, *:before, *:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  background: #312525;
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+}
+
+.cont {
+  position: relative;
+  overflow: hidden;
+  height: 70vh;
+  padding: 14vh 20vw 14vh 20vw;
+}
+.cont__inner {
+  position: relative;
+  height: 100%;
+}
+.cont__inner:hover .el__bg:after {
+  opacity: 1;
+}
+
+.el {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 48.9%;
+  height: 100%;
+  border-radius: 14px;
+  background: #252525;
+  transition: opacity 0.6s 0.7s, z-index 0s 1.3s, -webkit-transform 0.6s 0.7s;
+  transition: transform 0.6s 0.7s, opacity 0.6s 0.7s, z-index 0s 1.3s;
+  transition: transform 0.6s 0.7s, opacity 0.6s 0.7s, z-index 0s 1.3s, -webkit-transform 0.6s 0.7s;
+  will-change: transform, opacity;
+}
+
+.el__overflow {
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0PX 0PX 150PX 2PX #000000;
+  height: 100%;
+  border-radius: 12px;
+}
+.el__inner {
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+  transition: -webkit-transform 1s;
+  transition: transform 1s;
+  transition: transform 1s, -webkit-transform 1s;
+}
+.cont.s--inactive .el__inner {
+  -webkit-transform: translate3d(0, 100%, 0);
+          transform: translate3d(0, 100%, 0);
+}
+.el__bg {
+  border-radius: 12px;
+  width: calc(100vw);
+  height: 100%;
+  transition: -webkit-transform 0.6s 0.7s;
+  transition: transform 0.6s 0.7s;
+  transition: transform 0.6s 0.7s, -webkit-transform 0.6s 0.7s;
+  will-change: transform;
+}
+.el__bg:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0%;
+
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center center;
+  transition: -webkit-transform 1s;
+  transition: transform 1s;
+  transition: transform 1s, -webkit-transform 1s;
+  -webkit-transform: translate3d(0, 0, 0) scale(1);
+          transform: translate3d(0, 0, 0) scale(1);
+}
+.cont.s--inactive .el__bg:before {
+  -webkit-transform: translate3d(0, -100%, 0) scale(1.2);
+          transform: translate3d(0, -100%, 0) scale(1.2);
+}
+.el.s--active .el__bg:before {
+  transition: -webkit-transform 0.8s;
+  transition: transform 0.8s;
+  transition: transform 0.8s, -webkit-transform 0.8s;
+}
+.el__bg:after {
+  content: "";
+  z-index: 1;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.el__preview-cont {
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 12px;
+  width: 100%;
+  height: 100%;
+  transition: all 0.3s 1.2s;
+}
+.cont.s--inactive .el__preview-cont {
+  opacity: 0;
+  -webkit-transform: translateY(10px);
+          transform: translateY(10px);
+}
+.el__heading {
+  color: #fff;
+  font-family: 'Bad Script', cursive;
+  font-size: 18px;
+}
+.el__text {
+  overflow: auto;
+  height: 100%;
+  font-size: 40px;
+  color: #fff;
+}
+.el:nth-child(1) {
+  -webkit-transform: translate3d(0%, 0, 0);
+          transform: translate3d(0%, 0, 0);
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+}
+.el:nth-child(1) .el__inner {
+  transition-delay: 0s;
+}
+.el:nth-child(1) .el__bg {
+  -webkit-transform: translate3d(0%, 0, 0);
+          transform: translate3d(0%, 0, 0);
+}
+.el:nth-child(1) .el__bg:before {
+  transition-delay: 0s;
+  background-image: url("../img/ce/eve-cult.jpg");
+}
+.el:nth-child(2) {
+  -webkit-transform: translate3d(105.2083333333%, 0, 0);
+          transform: translate3d(105.2083333333%, 0, 0);
+  -webkit-transform-origin: 155.2083333333% 50%;
+          transform-origin: 155.2083333333% 50%;
+}
+.el:nth-child(2) .el__inner {
+  transition-delay: 0.1s;
+}
+.el:nth-child(2) .el__bg {
+  -webkit-transform: translate3d(-19.2%, 0, 0);
+          transform: translate3d(-19.2%, 0, 0);
+}
+.el:nth-child(2) .el__bg:before {
+  transition-delay: 0.1s;
+  background-image: url("../img/t/final.jpg");
+}
+/*.el:nth-child(3) {
+  -webkit-transform: translate3d(210.4166666667%, 0, 0);
+          transform: translate3d(210.4166666667%, 0, 0);
+  -webkit-transform-origin: 260.4166666667% 50%;
+          transform-origin: 260.4166666667% 50%;
+}
+.el:nth-child(3) .el__inner {
+  transition-delay: 0.2s;
+}
+.el:nth-child(3) .el__bg {
+  -webkit-transform: translate3d(-38.4%, 0, 0);
+          transform: translate3d(-38.4%, 0, 0);
+}
+.el:nth-child(3) .el__bg:before {
+  transition-delay: 0.2s;
+  background-image: url("../img/t/ps4.jpg");
+}*/
+.el:hover .el__bg:after {
+  opacity: 0;
+}
+.h1{
+
+  font-size: 90px;
+  font-family: 'Aleo', serif;
+  font-weight: 300;
+}
+.el__text::-webkit-scrollbar {
+  width: 6px;
+}
+
+.el__text::-webkit-scrollbar-track {
+}
+.el__text::-webkit-scrollbar-thumb {
+  background-color: grey;
+  outline: 1px solid yellow;
+  border-radius: 10px;
+}
+.el__text h1{
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+}
+.el__text .subtitles{
+  text-align: center;
+  font-weight: lighter;
+  font-style: italic;
+  font-size: 15px;
+}
+.el__text .content{
+  font-weight: lighter;
+  font-size: 22px;
+}
+.el__text h5{
+  font-size: 30px;
+  font-weight: normal;
+}
+@media only screen and (max-width: 420px){
+  .cont{
+    padding: 14vh 2vw 14vh 2vw;
+    height: 65vh;
+  }
+
+}
